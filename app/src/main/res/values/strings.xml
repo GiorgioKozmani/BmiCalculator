@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MyBmiCalculator</string>
+    <string name="welcome_back">BMI calculator</string>
+    <string name="height">height</string>
+    <string name="weight">weight</string>
+    <string name="check_bmi">check BMI</string>
 </resources>
