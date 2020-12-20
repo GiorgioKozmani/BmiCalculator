@@ -8,10 +8,9 @@ import com.mieszko.mybmicalculator.domain.usecase.GetBmiUseCase
 import io.reactivex.disposables.CompositeDisposable
 
 class BmiViewModel(
-    private val getBmiUseCase: GetBmiUseCase
+    private val getBmiUseCase: GetBmiUseCase,
+    private val disposablesBag: CompositeDisposable
 ) : ViewModel() {
-    private val disposablesBag = CompositeDisposable()
-
     var inputWeight: Int = 0
     var inputHeight: Int = 0
     var bmiText: ObservableField<String> =
@@ -19,14 +18,15 @@ class BmiViewModel(
 
     fun performBmiCheck() {
         // cancel cancel not finished calls
-        disposablesBag.clear()
-        disposablesBag.add(
-            getBmiUseCase.getBmi(BmiInput(inputHeight, inputWeight))
+        disposablesBag.run {
+            clear()
+            add(getBmiUseCase.getBmi(BmiInput(inputHeight, inputWeight))
                 .subscribe(
                     { serverResponse -> bmiText.set(serverResponse) },
                     { Log.d("testError", it.toString()) }
                 )
-        )
+            )
+        }
     }
 
     override fun onCleared() {

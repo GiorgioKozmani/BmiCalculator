@@ -36,7 +36,7 @@
 
             <TextView
                 android:id="@+id/bmi_text"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="60dp"
                 android:layout_marginBottom="24dp"
