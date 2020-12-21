@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/calculator_desc">
+
+    <!--            app:enterAnim="@anim/slide_in_right"-->
+    <!--            app:exitAnim="@anim/slide_out_left"-->
+    <!--            app:popEnterAnim="@anim/slide_in_left"-->
+    <!--            app:popExitAnim="@anim/slide_out_right"-->
+
+    <!--            app:enterAnim="@anim/slide_in_right"-->
+    <!--            app:exitAnim="@anim/slide_out_left"-->
+    <!--            app:popEnterAnim="@anim/slide_in_left"-->
+    <!--            app:popExitAnim="@anim/slide_out_right"-->
+
+    <!--            app:enterAnim="@anim/slide_in_right"-->
+    <!--            app:exitAnim="@anim/slide_out_left"-->
+    <!--            app:popEnterAnim="@anim/slide_in_left"-->
+    <!--            app:popExitAnim="@anim/slide_out_right"-->
+
+    <!--            app:enterAnim="@anim/slide_in_right"-->
+    <!--            app:exitAnim="@anim/slide_out_left"-->
+    <!--            app:popEnterAnim="@anim/slide_in_left"-->
+    <!--            app:popExitAnim="@anim/slide_out_right"-->
+    <fragment
+        android:id="@+id/calculator_desc"
+        android:name="com.mieszko.mybmicalculator.presentation.calculator.CalculatorFragment"
+        android:label="calculator"
+        tools:layout="@layout/calculator_fragment">
+        <action
+            android:id="@+id/to_statistics_desc"
+            app:destination="@id/statistics_desc" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/statistics_desc"
+        android:name="com.mieszko.mybmicalculator.presentation.statistics.StatisticsFragment"
+        android:label="@string/statistics_info"
+        tools:layout="@layout/statistics_fragment">
+        <action
+            android:id="@+id/to_calculator_desc"
+            app:destination="@id/calculator_desc"
+            app:popUpTo="@id/calculator_desc"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

@@ -1,10 +1,7 @@
 package com.mieszko.mybmicalculator
 
 import android.app.Application
-import com.mieszko.mybmicalculator.di.module.NetworkModule
-import com.mieszko.mybmicalculator.di.module.RepositoryModule
-import com.mieszko.mybmicalculator.di.module.UseCaseModule
-import com.mieszko.mybmicalculator.di.module.ViewModelModule
+import com.mieszko.mybmicalculator.di.module.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -22,7 +19,8 @@ class MyApp : Application() {
                     NetworkModule,
                     RepositoryModule,
                     UseCaseModule,
-                    ViewModelModule
+                    ViewModelModule,
+                    MapperModule
                 )
             )
         }
